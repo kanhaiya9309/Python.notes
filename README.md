@@ -2,7 +2,7 @@
 This is Python Note
 
 
-Sure, I'll format your notes and code into a more organized structure:
+
 
 ## Python Notes
 
@@ -130,4 +130,82 @@ def Calculation(n1, n2, operation):
 Calculation(n1, n2, operation)
 ```
 
-These are the organized Python notes with the code displayed in a different format.
+
+
+### First Example: CalculateAutomobile
+
+```python
+# Find How many two-wheeler and four-wheeler are made
+
+# 130 + 70 = 200 vehicles
+# (70 * 4) + (130 * 2) = 540 wheels
+
+def CalculateAutomobile(total, wheels):
+    if int(wheels) > int(total):
+        two_wheeler = ((4 * int(total)) - int(wheels)) // 2
+        two_wheeler = int(two_wheeler)
+        if two_wheeler > 0:
+            four_wheeler = int(total) - two_wheeler
+            print("By providing info " + str(two_wheeler) + " Two-wheeler are made and " + str(four_wheeler) + " four-wheeler are made ")
+        else:
+            print("Sorry, your data is not valid for this")
+    else:
+        print("Sorry, your data is invalid for this")
+
+CalculateAutomobile(200, 600)
+```
+
+### Second Example: MakeDecision
+
+```python
+# ###*** for this makeList = list(userInput)
+
+def MakeDecision(userInput):
+    s = userInput
+    countOfStar = 0
+    countOfHash = 0
+    
+    for item in s:
+        if item == "#":
+            countOfHash += 1
+        else:
+            countOfStar += 1
+            
+    print(countOfStar - countOfHash)
+    
+    if countOfHash > countOfStar: 
+        print("Negative Integer")
+    elif countOfHash < countOfStar:
+        print("Positive Integer")
+    elif countOfHash == countOfStar:
+        print("Equal")
+    else:
+        print("Invalid Input")
+
+MakeDecision("###***")
+```
+
+### Third Example: CountOfPrior
+
+```python
+# [-2, -5, -1, -8, -3] and [5, 2, 8, 4, 9, 1] for both use float(-inf) comparing the previous greater element
+
+listOfElement = [-2, -5, -1, -8, -3]
+
+def CountOfPrior(listOfElement):
+    count = 0 
+    max_value = float('-inf')
+    
+    for element in listOfElement:
+        if element > max_value:
+            print(element, max_value)
+            count += 1
+            max_value = element 
+        
+    return count 
+
+result = CountOfPrior(listOfElement) 
+print(result)
+```
+
+
